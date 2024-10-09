@@ -121,19 +121,23 @@ for (let i= 0; i < NOVIEmployees.length; i++) {
 // Opdracht 2-BONUS
 // Lukt het je om ervoor te zorgen dat alle e-mailadressen in lowercase letters komen te staan? Dit heb je nog niet geleerd, maar google is your best friend...
 // ==========================================
-
 //Stappenplan:
 // 1. loop door de array heen en
 // a) zet elke string om in kleine letters
 // b) voeg bij elk object :
 //    b1) de property email toe.
 //    b2) het emailadres op basis van de properties firstName en LastName.
-//
-//for (let i= 0; i < NOVIEmployees.length; i++) {
-//   let change = NOVIEmployees[i].firstName.toLowerCase() NOVIEmployees[i].lastName.toLowerCase()
-//   let emailExtra = `${NOVIEmployees[i].firstName.toLowerCase()}.${NOVIEmployees[i].lastName.toLowerCase()}@novi.nl`
-//  NOVIEmployees[i].email = emailExtra;
-// console.log(NOVIEmployees[i]);
+
+
+for (let i = 0; i < NOVIEmployees.length; i++) {
+    let firstNameSmall= NOVIEmployees[i].firstName.toLowerCase();
+    NOVIEmployees[i].firstName = firstNameSmall;
+    let lastNameSmall = NOVIEmployees[i].lastName.toLowerCase();
+    NOVIEmployees[i].lastName = lastNameSmall;
+    NOVIEmployees[i].email = `${firstNameSmall}.${lastNameSmall}@novi.nl`;
+    console.log(NOVIEmployees[i]);
+}
+
 // ==========================================
 // Opdracht 3
 // Schrijf een script die de property "neighborhood" (de buurt) invult op basis van de postcode van onze studenten.
