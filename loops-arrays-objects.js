@@ -106,13 +106,34 @@ console.log(scores);
 //   { firstName: 'Mark', lastName: 'Rensen', email: 'Mark.Rensen@novi.nl' },
 //  ];
 // ==========================================
+// Stappenplan:
+// 1. loop door de array heen en voeg bij elk object :
+// a) de property email toe.
+// b) het emailadres op basis van de properties firstName en LastName.
+//
 
+
+for (let i= 0; i < NOVIEmployees.length; i++) {
+    NOVIEmployees[i].email = `${NOVIEmployees[i].firstName}.${NOVIEmployees[i].lastName}@novi.nl`;
+    console.log(NOVIEmployees[i]);
+}
 
 // Opdracht 2-BONUS
 // Lukt het je om ervoor te zorgen dat alle e-mailadressen in lowercase letters komen te staan? Dit heb je nog niet geleerd, maar google is your best friend...
 // ==========================================
 
-
+//Stappenplan:
+// 1. loop door de array heen en
+// a) zet elke string om in kleine letters
+// b) voeg bij elk object :
+//    b1) de property email toe.
+//    b2) het emailadres op basis van de properties firstName en LastName.
+//
+//for (let i= 0; i < NOVIEmployees.length; i++) {
+//   let change = NOVIEmployees[i].firstName.toLowerCase() NOVIEmployees[i].lastName.toLowerCase()
+//   let emailExtra = `${NOVIEmployees[i].firstName.toLowerCase()}.${NOVIEmployees[i].lastName.toLowerCase()}@novi.nl`
+//  NOVIEmployees[i].email = emailExtra;
+// console.log(NOVIEmployees[i]);
 // ==========================================
 // Opdracht 3
 // Schrijf een script die de property "neighborhood" (de buurt) invult op basis van de postcode van onze studenten.
@@ -158,4 +179,37 @@ console.log(scores);
 // ==========================================
 
 
+// Stappenplan:
+// A: Loop door deze array en check op zipCode
+// B: koppel elke zip code aan een neighbourhood
+// C: vervang neighbourhood null voor neighbourhood + de wijk die past bij de zip code.
+
+
+for (let i = 0; i < students.length; i++) {
+    switch (students[i].zipCode) {
+        case '3513':
+            students[i].neighborhood = 'Pijlsweerd';
+            break;
+        case '3514':
+            students[i].neighborhood = 'Vogelenbuurt';
+            break;
+        case '3512':
+            students[i].neighborhood = 'Binnenstad';
+            break;
+        case '3531':
+            students[i].neighborhood = 'Lombok';
+            break;
+        case '3572':
+            students[i].neighborhood = 'Wittevrouwen';
+            break;
+        case '3581':
+            students[i].neighborhood = 'Oudwijk';
+            break;
+        case '3583':
+            students[i].neighborhood = 'Schildersbuurt';
+            break;
+        default: console.log(' Geen zipcode bekend');
+    }
+    console.log(students[i])
+}
 
